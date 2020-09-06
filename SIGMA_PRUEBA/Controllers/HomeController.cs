@@ -13,18 +13,40 @@ namespace SIGMA_PRUEBA.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
+        //
+        //
+        //
+        //
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
-
+        //
+        //
+        //
+        //
         public IActionResult Index()
         {
             return View();
         }
-
-
+        //
+        //
+        //
+         class apartado{
+                public int apar{get;set;}
+            }
+        //
+        [HttpGet("[action]")]
+        public IActionResult relmodulos()
+        {
+            apartado apa = new apartado();
+            apa.apar = 10;
+            return View( apa );
+        }
+        //
+        //
+        //
+        //
         [HttpGet("[action]")]
         public IActionResult Privacy()
         {

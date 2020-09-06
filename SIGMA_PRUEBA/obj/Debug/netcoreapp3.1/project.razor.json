@@ -14462,6 +14462,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\Views\\Home\\relmodulos.cshtml",
+      "TargetPath": "Views\\Home\\relmodulos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
