@@ -9,6 +9,10 @@ using SIGMA_PRUEBA.Models;
 
 namespace SIGMA_PRUEBA.Controllers
 {
+    public class apartado{
+                public int apar{get;set;}
+            }
+
     [Microsoft.AspNetCore.Mvc.Route("/")]
     public class HomeController : Controller
     {
@@ -32,9 +36,6 @@ namespace SIGMA_PRUEBA.Controllers
         //
         //
         //
-         class apartado{
-                public int apar{get;set;}
-            }
         //
         [HttpGet("[action]")]
         public IActionResult relmodulos()
