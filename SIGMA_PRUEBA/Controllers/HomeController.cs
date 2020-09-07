@@ -148,6 +148,23 @@ namespace SIGMA_PRUEBA.Controllers
         //
         //
         //
+        [HttpPost("[action]"), FormatFilter]
+        public IActionResult ingprof( string idcodmod, string idcard, string name,
+                                        string lnamep, string lnamem, 
+                                        string direcc, string phone, 
+                                        string dborn
+                                         )
+        {
+            AllParamsL lt = new AllParamsL();
+            lt.Info = idcodmod + idcard + lnamep + lnamem +
+                        direcc + phone + dborn +
+                        "";
+            return View(lt);
+        }
+        //
+        //
+        //
+        //
         [HttpGet("[action]")]
         public IActionResult Privacy()
         {

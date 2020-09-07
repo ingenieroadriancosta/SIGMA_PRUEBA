@@ -14467,8 +14467,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\Views\\Shared\\_ConsModForm.cshtml",
+      "TargetPath": "Views\\Shared\\_ConsModForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\Views\\Home\\ingprof.cshtml",
+      "TargetPath": "Views\\Home\\ingprof.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\Views\\Shared\\_IngrModForm.cshtml",
+      "TargetPath": "Views\\Shared\\_IngrModForm.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14479,6 +14494,11 @@
     {
       "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\Views\\Shared\\_profesorform.cshtml",
+      "TargetPath": "Views\\Shared\\_profesorform.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -90,3 +90,7 @@ E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\SIGMA\SIGMA_PRUEBA\obj\Debug\n
 E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\SIGMA\SIGMA_PRUEBA\obj\Debug\netcoreapp3.1\SIGMA_PRUEBA.genruntimeconfig.cache
 E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\SIGMA\SIGMA_PRUEBA\obj\Debug\netcoreapp3.1\Razor\Views\Home\relmodulos.cshtml.g.cs
 E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\SIGMA\SIGMA_PRUEBA\obj\Debug\netcoreapp3.1\Razor\Views\Home\ingmodulos.cshtml.g.cs
+E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\SIGMA\SIGMA_PRUEBA\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ConsModForm.cshtml.g.cs
+E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\SIGMA\SIGMA_PRUEBA\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_IngrModForm.cshtml.g.cs
+E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\SIGMA\SIGMA_PRUEBA\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_profesorform.cshtml.g.cs
+E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\SIGMA\SIGMA_PRUEBA\obj\Debug\netcoreapp3.1\Razor\Views\Home\ingprof.cshtml.g.cs

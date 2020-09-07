@@ -1,0 +1,23 @@
+<form class=" border border-primary col-md-3" method="GET" action="/relmodulos" >
+    <div class="form-group">
+      <label for="exaest"><b>CONSULTAS DE MODULOS:</b></label>
+      <h3> &nbsp; </h3>
+      <select class="form-control " id="idconmod" name="id">
+        @foreach (var item in @Model.Lmod)
+        {
+            <option>@item.Nombre</option>
+        }
+      </select>
+    </div>
+    
+    <br>
+    <select class=" form-inline form-control " id="valalpr" name="valalpr">
+        <option>Alumnos</option>
+        <option>Profesor</option>
+    </select>
+      <br>
+      <br>
+    <button  type="submit" class=" btn btn-primary">Consultar</button>
+    <br>
+    <br>
+</form>

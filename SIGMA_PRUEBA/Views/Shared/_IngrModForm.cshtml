@@ -1,0 +1,19 @@
+<form class=" border border-primary col-md-3" data-toggle="validator" role="form" method="POST" action="/ingmodulos">
+    <div class="form-group">
+        <label for="exaest"><b>INGRESO DE MODULOS:</b></label>
+        <h3> &nbsp; </h3>
+        <label for="static">Código del módulo:</label>
+        <input required type="text" class="form-control" name="idofmod" id="idofmod" placeholder="Código del módulo" 
+            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                    maxlength="18"
+                value="901289">
+        <h3> &nbsp; </h3>
+        <h3> &nbsp; </h3>
+        <label for="static">Nombre del módulo:</label>
+        <input required type="text" class="form-control" name="nameofmod" id="nameofmod" placeholder="Nombre del módulo" 
+            onkeydown="return /[a-z]/i.test(event.key)"
+                value="CalculoI">
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary mb-2">Ingresar</button>
+</form>
