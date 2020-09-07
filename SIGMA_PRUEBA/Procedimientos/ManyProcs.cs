@@ -22,6 +22,29 @@ namespace SIGMA_PRUEBA
         //
         //
         //
+        public static bool IsAlumno( string idcard, DbContextSIGMA db ){
+            long id = str2long(idcard);
+            return db.Alumnos.Where( s=> s.Codigo==id ).FirstOrDefault()!=null;
+        }
+        //
+        //
+        //
+        //
+        public static bool IsModuAsigAlu( string idcodmod, string idal, DbContextSIGMA db ){
+            ModulosParams mdp = db.Modulos.Where( s => s.Nombre==idcodmod ).FirstOrDefault();
+            if( mdp==null ){
+                return false;
+            }
+            long id = str2long(idal);
+            return db.RelacionesModulos.Where( s=> 
+                        s.CodigoModulo==mdp.Codigo &&
+                        s.CodigoAdjunto==id
+                    ).FirstOrDefault()!=null;
+        }
+        //
+        //
+        //
+        //
         public static bool IsProfesor( string idcard, DbContextSIGMA db ){
             long id = str2long(idcard);
             return db.Profesores.Where( s=> s.Codigo==id ).FirstOrDefault()!=null;

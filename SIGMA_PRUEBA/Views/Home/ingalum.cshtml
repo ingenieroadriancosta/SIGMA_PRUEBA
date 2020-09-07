@@ -1,0 +1,40 @@
+@model SIGMA_PRUEBA.Models.AllParamsL;
+
+
+@switch (@Model.valpr)
+{
+    case 0:
+        <script>
+            alert("El profesor \n\n    @Model.Info \n\nha sido guardado."  );
+            location.replace("/");
+        </script>
+        break;
+    case 1:
+        <script>
+            alert("Error:\nEl alumno ya existe."  );
+            location.replace("/");
+        </script>
+        break;
+    case 2:
+        <script>
+            alert("Error:\nEl alumno ya está asignado al módulo."  );
+            location.replace("/");
+        </script>
+        break;
+    case 3:
+        <script>
+            alert("Error:\nEl módulo ya está asignado a otro profesor."  );
+            location.replace("/");
+        </script>
+        break;
+    default:
+        <script>
+            alert("Error:\nDesconocido."  );
+            location.replace("/");
+        </script>
+        break;
+}
+
+
+
+

@@ -194,6 +194,46 @@ namespace SIGMA_PRUEBA.Controllers
         //
         //
         //
+        [HttpPost("[action]"), FormatFilter]
+        public IActionResult ingalum( string idcodmod, string idcard, string name,
+                                        string lnamep, string lnamem, 
+                                        string dborn
+                                         )
+        {
+            AllParamsL lt = new AllParamsL();
+            AlumnosParams alpar = new AlumnosParams();
+            if( ManyProcs.IsAlumno(idcard,db) ){
+                lt.valpr = 10;
+            }else{
+                alpar.Codigo = ManyProcs.str2long(idcard);
+                alpar.Nombre = name;
+                alpar.ApellidoP = lnamep;
+                alpar.ApellidoM = lnamem;
+                alpar.Nacimiento = DateTime.Parse(dborn);
+                db.Alumnos.Add(alpar);
+                db.SaveChanges();
+                lt.valpr = 0;
+            }
+            if( ManyProcs.IsModuAsigAlu(idcard,idcard,db) ){
+                lt.valpr = lt.valpr+10;
+                return View(lt);
+            }
+            //
+            RelacionesModulosParams rlp = new RelacionesModulosParams();
+            rlp.CodigoAdjunto = alpar.Codigo;
+            rlp.CodigoModulo = db.Modulos.Where(s =>s.Nombre==idcodmod).FirstOrDefault().Codigo;
+            rlp.AprobadoProfesor = 2;
+            //
+            db.RelacionesModulos.Add(rlp);
+            db.SaveChanges();
+            lt.valpr = 0;
+            lt.Info = name + " " + lnamep + " " + lnamem + " para el modulo " + idcodmod;
+            return View(lt);
+        }
+        //
+        //
+        //
+        //
         [HttpGet("[action]")]
         public IActionResult Privacy()
         {
