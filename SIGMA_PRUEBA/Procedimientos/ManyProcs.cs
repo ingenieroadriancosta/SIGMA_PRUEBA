@@ -20,10 +20,32 @@ namespace SIGMA_PRUEBA
         }
         //
         //
+        //
+        //
         public static bool IsProfesor( string idcard, DbContextSIGMA db ){
             long id = str2long(idcard);
             return db.Profesores.Where( s=> s.Codigo==id ).FirstOrDefault()!=null;
         }
+        //
+        //
+        //
+        //
+        public static bool IsProfAsig( string idcard, DbContextSIGMA db ){
+            long id = str2long(idcard);
+            return db.RelacionesModulos.Where( s=> s.CodigoAdjunto==id ).FirstOrDefault()!=null;
+        }
+        //
+        //
+        //
+        //
+        public static bool IsModuAsig( string idcodmod, DbContextSIGMA db ){
+            ModulosParams mdp = db.Modulos.Where( s => s.Nombre==idcodmod ).FirstOrDefault();
+            if( mdp==null ){
+                return false;
+            }
+            return db.RelacionesModulos.Where( s=> s.CodigoModulo==mdp.Codigo ).FirstOrDefault()!=null;
+        }
+        //
         //
     }
 }

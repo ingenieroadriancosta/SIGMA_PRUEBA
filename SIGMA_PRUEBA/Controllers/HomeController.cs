@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using SIGMA_PRUEBA.Models;
 using SIGMA_PRUEBA;
+using System;
 
 namespace SIGMA_PRUEBA.Controllers
 {
@@ -160,9 +161,33 @@ namespace SIGMA_PRUEBA.Controllers
                 lt.valpr = 1;
                 return View(lt);
             }
-            lt.Info = idcodmod + idcard + name + lnamep + lnamem +
-                        direcc + phone + dborn +
-                        "";
+            if( ManyProcs.IsProfAsig(idcard,db) ){
+                lt.valpr = 2;
+                return View(lt);
+            }
+            if( ManyProcs.IsModuAsig(idcodmod,db) ){
+                lt.valpr = 3;
+                return View(lt);
+            }
+            ProfesoresParams prfp = new ProfesoresParams();
+            prfp.Codigo = ManyProcs.str2long(idcard);
+            prfp.Nombre = name;
+            prfp.ApellidoP = lnamep;
+            prfp.ApellidoM = lnamem;
+            prfp.Direccion = direcc;
+            prfp.Telefono = ManyProcs.str2long(phone);
+            prfp.Nacimiento = DateTime.Parse(dborn);
+            //
+            RelacionesModulosParams rlp = new RelacionesModulosParams();
+            rlp.CodigoAdjunto = prfp.Codigo;
+            rlp.CodigoModulo = db.Modulos.Where(s =>s.Nombre==idcodmod).FirstOrDefault().Codigo;
+            rlp.AprobadoProfesor = 2;
+            //
+            db.Profesores.Add(prfp);
+            db.RelacionesModulos.Add(rlp);
+            db.SaveChanges();
+            lt.valpr = 0;
+            lt.Info = name + " " + lnamep + " " + lnamem + " para el modulo " + idcodmod;
             return View(lt);
         }
         //
