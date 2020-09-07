@@ -14472,6 +14472,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\Views\\Shared\\_AlumnosForm.cshtml",
+      "TargetPath": "Views\\Shared\\_AlumnosForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\Views\\Home\\ingprof.cshtml",
       "TargetPath": "Views\\Home\\ingprof.cshtml",
       "FileKind": "mvc"

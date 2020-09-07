@@ -1,0 +1,65 @@
+<br>
+<form class=" border border-primary " data-toggle="validator" role="form" method="POST" action="/ingprof">
+    <div class="form-group">
+        <div style="display: block;">
+            <label for="exaest"><b>INGRESO DE ALUMNOS:</b></label>
+        </div>
+        <label for="static">Código del módulo:</label>
+        <select class="form-control col-md-4" id="idcodmod" name="idcodmod">
+            @foreach (var item in @Model.Lmod)
+            {
+                <option>@item.Nombre</option>
+            }
+        </select>
+    </div>
+    
+    <br>
+    <table class="table table-bordered form-group">
+        <thead>
+            <tr>
+            <th>Cédula</th>
+            <th>Nombre</th>
+            <th>ApellidoP</th>
+            <th>ApellidoM</th>
+            <th>Fecha de nacimiento</th>
+            </tr>
+        </thead>
+    <tbody>
+    <tr>
+        <td>
+        <input required type="text" class="form-control" name="idcard" id="idcard" placeholder="Cedula" 
+            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+            maxlength="18"
+                value="90901283">
+
+        </td>
+        <td>
+            <input required type="text" class="form-control" name="name" id="name" placeholder="Nombre" 
+                onkeydown="return /[a-z]/i.test(event.key)"
+                    value="Lena">
+
+        </td>
+        <td>
+            <input required type="text" class="form-control" name="lnamep" id="lnamep" placeholder="Apelllido Pat" 
+                onkeydown="return /[a-z]/i.test(event.key)"
+                    value="Forsen">
+        </td>
+        <td>
+            <input required type="text" class="form-control" name="lnamem" id="lnamem" placeholder="Apelllido Mat" 
+                onkeydown="return /[a-z]/i.test(event.key)"
+                    value="DSP">
+        </td>
+        <td>
+            <input type="date" id="dborn" name="dborn"
+            value="1940-01-01"
+            min="1940-01-01" max="2020-12-31">
+        </td>
+    </tbody>
+    </table>
+    <br>
+    <button type="submit" class="btn btn-primary mb-2">Ingresar profesor</button>
+</form>
+
+
+
+

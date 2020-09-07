@@ -94,3 +94,4 @@ E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\SIGMA\SIGMA_PRUEBA\obj\Debug\n
 E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\SIGMA\SIGMA_PRUEBA\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_IngrModForm.cshtml.g.cs
 E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\SIGMA\SIGMA_PRUEBA\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_profesorform.cshtml.g.cs
 E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\SIGMA\SIGMA_PRUEBA\obj\Debug\netcoreapp3.1\Razor\Views\Home\ingprof.cshtml.g.cs
+E:\AIIF\SegAll\ENTERPRISE\WEB\BACK\NET\EJERCICIOS\SIGMA\SIGMA_PRUEBA\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_AlumnosForm.cshtml.g.cs
