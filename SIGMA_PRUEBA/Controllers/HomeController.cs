@@ -133,6 +133,8 @@ namespace SIGMA_PRUEBA.Controllers
                 lt.Info = "EL módulo ya existe";
                 return View(lt);
             }
+            lt.valpr = 1;
+            lt.Info = "El módulo " + nameofmod + " ha sido guardado.";
             return View(lt);
         }
         //
