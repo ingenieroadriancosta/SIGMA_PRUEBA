@@ -1,5 +1,9 @@
-@model SIGMA_PRUEBA.Controllers.apartado;
+@model SIGMA_PRUEBA.Models.AllParamsL;
 
-<h1>
-    @Model.apar
-</h1>
+@foreach (var item in @Model.Lmod)
+{
+    <h1>
+        @item.Codigo @item.Nombre
+    </h1>
+}
+

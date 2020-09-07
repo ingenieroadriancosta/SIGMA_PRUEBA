@@ -1,5 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+namespace SIGMA_PRUEBA.Models
+{
 public class ProfesoresParams
 {
     // Default Id.
@@ -11,4 +13,5 @@ public class ProfesoresParams
     public string Direccion { get; set; }
     public long Telefono { get; set; }
     public DateTime Nacimiento { get; set; }
+}
 }

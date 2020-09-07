@@ -1,5 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+namespace SIGMA_PRUEBA.Models
+{
 public class RelacionesModulosParams
 {
     // Default Id.
@@ -25,4 +27,5 @@ public class RelacionesModulosParams
         this.CreatedDate  = DateTime.UtcNow;
         this.ModifiedDate = DateTime.UtcNow;
     }
+}
 }

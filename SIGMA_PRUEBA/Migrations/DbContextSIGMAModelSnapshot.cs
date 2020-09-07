@@ -16,7 +16,7 @@ namespace SIGMA_PRUEBA.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.7");
 
-            modelBuilder.Entity("AlumnosParams", b =>
+            modelBuilder.Entity("SIGMA_PRUEBA.Models.AlumnosParams", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -42,7 +42,7 @@ namespace SIGMA_PRUEBA.Migrations
                     b.ToTable("Alumnos");
                 });
 
-            modelBuilder.Entity("ModulosParams", b =>
+            modelBuilder.Entity("SIGMA_PRUEBA.Models.ModulosParams", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -59,7 +59,7 @@ namespace SIGMA_PRUEBA.Migrations
                     b.ToTable("Modulos");
                 });
 
-            modelBuilder.Entity("ProfesoresParams", b =>
+            modelBuilder.Entity("SIGMA_PRUEBA.Models.ProfesoresParams", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -91,7 +91,7 @@ namespace SIGMA_PRUEBA.Migrations
                     b.ToTable("Profesores");
                 });
 
-            modelBuilder.Entity("RelacionesModulosParams", b =>
+            modelBuilder.Entity("SIGMA_PRUEBA.Models.RelacionesModulosParams", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 /* 
             dotnet ef migrations add sigma 
@@ -6,6 +7,14 @@ using Microsoft.EntityFrameworkCore;
 */
 namespace SIGMA_PRUEBA.Models
 {
+    
+    public class AllParamsL
+    {
+        public List<ModulosParams> Lmod{get;set;}
+        public List<ProfesoresParams> Lprof{get;set;}
+        public List<AlumnosParams> Lalum{get;set;}
+        public List<RelacionesModulosParams> Lrela{get;set;}
+    }
 public class DbContextSIGMA : DbContext
 {
     //

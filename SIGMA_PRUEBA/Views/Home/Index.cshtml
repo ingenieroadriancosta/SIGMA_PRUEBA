@@ -1,16 +1,17 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+@model SIGMA_PRUEBA.Models.AllParamsL;
 
 <form class=" border border-primary col-md-4" method="GET" action="/relmodulos" >
     <br>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Consultar los estudiantes del modulo:</label>
     <select class="form-control " id="exampleFormControlSelect1" name="id">
-      <option>Matematicas</option>
-      <option>Biologia</option>
-      <option>Estadística</option>
+      @foreach (var item in @Model.Lmod)
+      {
+          <option>@item.Nombre</option>
+      }
     </select>
   </div>
   <button type="submit" class="btn btn-primary">Consultar</button>

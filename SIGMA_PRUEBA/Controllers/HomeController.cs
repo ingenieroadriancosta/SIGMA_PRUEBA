@@ -1,29 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using SIGMA_PRUEBA.Models;
 
 namespace SIGMA_PRUEBA.Controllers
 {
     public class apartado{
-                public int apar{get;set;}
-            }
+        public int apar{get;set;}
+        public string Sapar{get;set;}
+    }
 
     [Microsoft.AspNetCore.Mvc.Route("/")]
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        // private readonly ILogger<HomeController> _logger;
+        // public HomeController(ILogger<HomeController> logger){_logger = logger;}
         //
         //
         //
         //
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
+        private Models.DbContextSIGMA db;
+        public HomeController(Models.DbContextSIGMA context) {
+            this.db = context;
         }
         //
         //
@@ -31,7 +29,17 @@ namespace SIGMA_PRUEBA.Controllers
         //
         public IActionResult Index()
         {
-            return View();
+            //  s => s.Id_card == (long)IdCard ).FirstOrDefault();
+            if( db.Modulos.Where(s => s.Codigo == 12354 ).FirstOrDefault()==null ){
+                ModulosParams modp = new ModulosParams();
+                modp.Codigo = 12354;
+                modp.Nombre = "Calculo-"+modp.Codigo;
+                db.Add(modp);
+                db.SaveChanges();
+            }
+            AllParamsL lt = new AllParamsL();
+            lt.Lmod = db.Modulos.ToList();
+            return View( lt );
         }
         //
         //
@@ -40,9 +48,9 @@ namespace SIGMA_PRUEBA.Controllers
         [HttpGet("[action]")]
         public IActionResult relmodulos()
         {
-            apartado apa = new apartado();
-            apa.apar = 10;
-            return View( apa );
+            AllParamsL lt = new AllParamsL();
+            lt.Lmod = db.Modulos.ToList();
+            return View( lt );
         }
         //
         //
