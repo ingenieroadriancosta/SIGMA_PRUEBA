@@ -5,6 +5,7 @@
         @if( @Model.Lprof.Count==0 ){
             <h2 style="color:red;">NO HAY PROFESOR ASIGNADO</h2>
         }else{
+            <h1>PROFESOR DE: <b>@Model.Info</b></h1>
             @foreach (var item in @Model.Lprof)
             {
                 <h2>
@@ -14,8 +15,9 @@
         }
     }else{
         @if( @Model.Lalum.Count==0 ){
-            <h2 style="color:red;">NO HAY ESTUDIANTES ASIGNADOS</h2>
+            <h2 style="color:red;">NO HAY ALUMNOS PARA <b>@Model.Info</b> </h2>
         }else{
+            <h1>ALUMNOS DE: <b>@Model.Info</b></h1>
             @foreach (var item in @Model.Lalum)
             {
                 <h2>
