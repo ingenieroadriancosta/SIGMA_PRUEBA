@@ -5,9 +5,9 @@ namespace SIGMA_PRUEBA.Models
 public class RelacionesModulosParams
 {
     // Default Id.
-    public int Id { get; set; }
-    public int CodigoModulo { get; set; }
-    public int CodigoAdjunto { get; set; }
+    public long Id { get; set; }
+    public long CodigoModulo { get; set; }
+    public long CodigoAdjunto { get; set; }
     //
     //
     //

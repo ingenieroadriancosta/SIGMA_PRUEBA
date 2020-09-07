@@ -1,10 +1,9 @@
 @model SIGMA_PRUEBA.Models.AllParamsL;
 @if( @Model.Lprof!=null ||  @Model.Lalum!=null  ){
-    <h1>Información para el módulo: @Model.Info</h1>
     @if( @Model.valpr==2 ){
+        <h1>PROFESOR DE: <b>@Model.Info</b></h1>
         @if( @Model.Lprof.Count==0 ){
-            <h2>NO HAY PROFESOR ASIGNADO PARA</h2>
-            <h3>@Model.Info</h3>
+            <h2 style="color:red;">NO HAY PROFESOR ASIGNADO</h2>
         }else{
             @foreach (var item in @Model.Lprof)
             {
@@ -15,8 +14,7 @@
         }
     }else{
         @if( @Model.Lalum.Count==0 ){
-            <h2>NO HAY ESTUDIANTES ASIGNADOS PARA</h2>
-            <h3>@Model.Info</h3>
+            <h2 style="color:red;">NO HAY ESTUDIANTES ASIGNADOS</h2>
         }else{
             @foreach (var item in @Model.Lalum)
             {

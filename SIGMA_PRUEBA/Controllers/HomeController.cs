@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using SIGMA_PRUEBA.Models;
+using SIGMA_PRUEBA;
 
 namespace SIGMA_PRUEBA.Controllers
 {
@@ -73,7 +74,7 @@ namespace SIGMA_PRUEBA.Controllers
                 lt.Info = "Error en ModPNULL";
                 return View( lt );
             }
-            if( valalpr.Contains("0") ){
+            if( valalpr.Contains("Alumnos") ){
                 lt.Lrela = db.RelacionesModulos.Where(s => s.CodigoModulo == ModP.Codigo && s.CodigoAdjunto<2 ).ToList();
             }else{
                 lt.valpr = 2;
@@ -105,6 +106,34 @@ namespace SIGMA_PRUEBA.Controllers
             }
             lt.Info = modname;
             return View( lt );
+        }
+        //
+        //
+        //
+        //
+        //[HttpPost("{id, pss}"), FormatFilter]
+        // [HttpPost("[action]"), FormatFilter]
+        // public IActionResult login( [FromBody]LoginInput Vlogin )
+        [HttpPost("{idofmod, nameofmod}"), FormatFilter]
+        public IActionResult ingmodulos( string idofmod, string nameofmod )
+        {
+            AllParamsL lt = new AllParamsL();
+            lt.valpr = 0;
+            if( idofmod==null || nameofmod==null ){
+                lt.Info = "No debe dejar campos vacios.";
+                return View(lt);
+            }
+            long Iidofmod = (long)ManyProcs.str2long(idofmod);
+            nameofmod = nameofmod+"-"+Iidofmod;
+            ModulosParams ModP = db.Modulos.Where(s => 
+                    s.Nombre == nameofmod ||
+                    s.Codigo==Iidofmod
+             ).FirstOrDefault();
+            if( ModP!=null ){
+                lt.Info = "EL módulo ya existe";
+                return View(lt);
+            }
+            return View(lt);
         }
         //
         //

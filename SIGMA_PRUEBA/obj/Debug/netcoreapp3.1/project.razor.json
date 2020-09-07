@@ -14482,6 +14482,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\Views\\Home\\ingmodulos.cshtml",
+      "TargetPath": "Views\\Home\\ingmodulos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
