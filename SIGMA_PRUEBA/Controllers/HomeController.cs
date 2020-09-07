@@ -176,7 +176,7 @@ namespace SIGMA_PRUEBA.Controllers
             prfp.ApellidoM = lnamem;
             prfp.Direccion = direcc;
             prfp.Telefono = ManyProcs.str2long(phone);
-            prfp.Nacimiento = DateTime.Parse(dborn);
+            prfp.Nacimiento = ManyProcs.str2date(dborn);
             //
             RelacionesModulosParams rlp = new RelacionesModulosParams();
             rlp.CodigoAdjunto = prfp.Codigo;
@@ -202,27 +202,28 @@ namespace SIGMA_PRUEBA.Controllers
         {
             AllParamsL lt = new AllParamsL();
             AlumnosParams alpar = new AlumnosParams();
+            alpar.Codigo = ManyProcs.str2long(idcard);
+            alpar.Nombre = name;
+            alpar.ApellidoP = lnamep;
+            alpar.ApellidoM = lnamem;
+            alpar.Nacimiento = ManyProcs.str2date(dborn);
             if( ManyProcs.IsAlumno(idcard,db) ){
-                lt.valpr = 10;
+                lt.valpr = 1;
             }else{
-                alpar.Codigo = ManyProcs.str2long(idcard);
-                alpar.Nombre = name;
-                alpar.ApellidoP = lnamep;
-                alpar.ApellidoM = lnamem;
-                alpar.Nacimiento = DateTime.Parse(dborn);
                 db.Alumnos.Add(alpar);
                 db.SaveChanges();
                 lt.valpr = 0;
             }
-            if( ManyProcs.IsModuAsigAlu(idcard,idcard,db) ){
-                lt.valpr = lt.valpr+10;
+            if( ManyProcs.IsModuAsigAlu(idcodmod,idcard,db) ){
+                lt.valpr = lt.valpr + 2;
+                lt.Info = idcodmod;
                 return View(lt);
             }
             //
             RelacionesModulosParams rlp = new RelacionesModulosParams();
             rlp.CodigoAdjunto = alpar.Codigo;
             rlp.CodigoModulo = db.Modulos.Where(s =>s.Nombre==idcodmod).FirstOrDefault().Codigo;
-            rlp.AprobadoProfesor = 2;
+            rlp.AprobadoProfesor = 0;
             //
             db.RelacionesModulos.Add(rlp);
             db.SaveChanges();

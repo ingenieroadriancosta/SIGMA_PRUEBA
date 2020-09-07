@@ -9,7 +9,7 @@ using SIGMA_PRUEBA.Models;
 namespace SIGMA_PRUEBA.Migrations
 {
     [DbContext(typeof(DbContextSIGMA))]
-    [Migration("20200907043235_sigma")]
+    [Migration("20200907114132_sigma")]
     partial class sigma
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

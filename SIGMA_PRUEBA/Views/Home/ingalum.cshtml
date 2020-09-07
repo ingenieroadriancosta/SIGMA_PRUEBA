@@ -5,7 +5,7 @@
 {
     case 0:
         <script>
-            alert("El profesor \n\n    @Model.Info \n\nha sido guardado."  );
+            alert("El alumno \n\n    @Model.Info \n\nha sido guardado."  );
             location.replace("/");
         </script>
         break;
@@ -23,7 +23,7 @@
         break;
     case 3:
         <script>
-            alert("Error:\nEl módulo ya está asignado a otro profesor."  );
+            alert("Error:\nEl alumno existe y está asignado al modulo @Model.Info."  );
             location.replace("/");
         </script>
         break;

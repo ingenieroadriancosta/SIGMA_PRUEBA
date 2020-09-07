@@ -17,6 +17,16 @@ namespace SIGMA_PRUEBA
                 Console.WriteLine( "------------------------------------------" );
                 return -1;
             }
+        }//
+        public static DateTime str2date( string str ){
+            try{
+                return DateTime.Parse(str);
+            }catch( FormatException  ex ){
+                Console.WriteLine( "------------------------------------------" );
+                Console.WriteLine( "Error FUNCTION (ManyProcs.str2date):" + ex );
+                Console.WriteLine( "------------------------------------------" );
+                return DateTime.Now;
+            }
         }
         //
         //
