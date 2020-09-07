@@ -89,7 +89,7 @@
     <!---->
     <!---->
   
-  <form class=" border border-primary col-md-6" data-toggle="validator"
+  <form class=" border border-primary " data-toggle="validator"
                       role="form" method="POST" action="/ingmodulos">
     <div class="form-group">
       <div style="display: block;">
@@ -108,28 +108,50 @@
       <table class="table table-bordered">
         <thead>
   <tr>
+    <th>Cédula</th>
     <th>Nombre</th>
     <th>ApellidoP</th>
     <th>ApellidoM</th>
+    <th>Dirección</th>
+    <th>Teléfono</th>
   </tr>
   </thead>
   <tbody>
+    
   <tr>
     <td>
-      <input required type="text" class="form-control" name="name" id="name" placeholder="Nombre del módulo" 
+      <input required type="text" class="form-control" name="idcard" id="idcard" placeholder="Cedula" 
+            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+            maxlength="18"
+                value="90901283">
+    
+    </td>
+    <td>
+      <input required type="text" class="form-control" name="name" id="name" placeholder="Nombre" 
             onkeydown="return /[a-z]/i.test(event.key)"
                 value="Lena">
     
     </td>
     <td>
-      <input required type="text" class="form-control" name="lnamep" id="lnamep" placeholder="Nombre del módulo" 
+      <input required type="text" class="form-control" name="lnamep" id="lnamep" placeholder="Apelllido Pat" 
             onkeydown="return /[a-z]/i.test(event.key)"
                 value="Forsen">
     </td>
     <td>
-      <input required type="text" class="form-control" name="lnamem" id="lnamem" placeholder="Nombre del módulo" 
+      <input required type="text" class="form-control" name="lnamem" id="lnamem" placeholder="Apelllido Mat" 
             onkeydown="return /[a-z]/i.test(event.key)"
                 value="DSP">
+    </td>
+    <td>
+      <input required type="text" class="form-control" name="direcc" id="direcc" placeholder="Dirección" 
+                value="Cra19 No 41-21">
+    </td>
+    <td>
+      <input required type="text" class="form-control" name="phone" id="phone" placeholder="Telefono" 
+            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+            maxlength="18"
+                value="5771054">
+    
     </td>
   </tbody>
 
