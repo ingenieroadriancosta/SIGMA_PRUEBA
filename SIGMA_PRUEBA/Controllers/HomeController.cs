@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using SIGMA_PRUEBA.Models;
@@ -29,12 +30,27 @@ namespace SIGMA_PRUEBA.Controllers
         //
         public IActionResult Index()
         {
-            //  s => s.Id_card == (long)IdCard ).FirstOrDefault();
             if( db.Modulos.Where(s => s.Codigo == 12354 ).FirstOrDefault()==null ){
                 ModulosParams modp = new ModulosParams();
                 modp.Codigo = 12354;
                 modp.Nombre = "Calculo-"+modp.Codigo;
                 db.Add(modp);
+                //
+                AlumnosParams alup = new AlumnosParams();
+                alup.Codigo = 1;
+                alup.Nombre = "Adrian";
+                alup.ApellidoP = "Costa";
+                alup.ApellidoM = "Ospino";
+                alup.Nacimiento = System.DateTime.Now;
+                db.Add(alup);
+                //
+                RelacionesModulosParams relp = new RelacionesModulosParams();
+                relp.CodigoModulo = 12354;
+                relp.CodigoAdjunto = 1;
+                relp.AprobadoProfesor = 0;
+                db.Add(relp);
+                //
+                //
                 db.SaveChanges();
             }
             AllParamsL lt = new AllParamsL();
@@ -49,7 +65,45 @@ namespace SIGMA_PRUEBA.Controllers
         public IActionResult relmodulos()
         {
             AllParamsL lt = new AllParamsL();
-            lt.Lmod = db.Modulos.ToList();
+            lt.Lmod = null;
+            string modname = Request.Query["id"];
+            string valalpr = Request.Query["valalpr"]+"";
+            ModulosParams ModP = db.Modulos.Where(s => s.Nombre == modname ).FirstOrDefault();
+            if( ModP==null ){
+                lt.Info = "Error en ModPNULL";
+                return View( lt );
+            }
+            if( valalpr.Contains("0") ){
+                lt.Lrela = db.RelacionesModulos.Where(s => s.CodigoModulo == ModP.Codigo && s.CodigoAdjunto<2 ).ToList();
+            }else{
+                lt.valpr = 2;
+                lt.Lrela = db.RelacionesModulos.Where(s => s.CodigoModulo == ModP.Codigo && s.AprobadoProfesor==2 ).ToList();
+            }
+            if( lt.Lrela==null ){
+                lt.Info = "Error en lt.Lrela";
+                return View( lt );
+            }
+            //
+            if( lt.valpr==2 ){
+                ProfesoresParams ALP = null;
+                lt.Lprof = new List<ProfesoresParams>();
+                foreach( var values in lt.Lrela ){
+                    ALP = db.Profesores.Where( s => s.Codigo==values.CodigoAdjunto ).FirstOrDefault();
+                    if( ALP!=null ){
+                        lt.Lprof.Add(ALP);
+                    }
+                }
+            }else{
+                AlumnosParams ALP = null;
+                lt.Lalum = new List<AlumnosParams>();
+                foreach( var values in lt.Lrela ){
+                    ALP = db.Alumnos.Where( s => s.Codigo==values.CodigoAdjunto ).FirstOrDefault();
+                    if( ALP!=null ){
+                        lt.Lalum.Add(ALP);
+                    }
+                }
+            }
+            lt.Info = modname;
             return View( lt );
         }
         //

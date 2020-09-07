@@ -14,6 +14,8 @@ namespace SIGMA_PRUEBA.Models
         public List<ProfesoresParams> Lprof{get;set;}
         public List<AlumnosParams> Lalum{get;set;}
         public List<RelacionesModulosParams> Lrela{get;set;}
+        public int valpr{get;set;}
+        public string Info{get;set;}
     }
 public class DbContextSIGMA : DbContext
 {

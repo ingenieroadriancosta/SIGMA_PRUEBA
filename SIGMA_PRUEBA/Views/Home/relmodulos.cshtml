@@ -1,9 +1,29 @@
 @model SIGMA_PRUEBA.Models.AllParamsL;
-
-@foreach (var item in @Model.Lmod)
-{
-    <h1>
-        @item.Codigo @item.Nombre
-    </h1>
+@if( @Model.Lprof!=null ||  @Model.Lalum!=null  ){
+    <h1>Información para el módulo: @Model.Info</h1>
+    @if( @Model.valpr==2 ){
+        @if( @Model.Lprof.Count==0 ){
+            <h2>NO HAY PROFESOR ASIGNADO PARA</h2>
+            <h3>@Model.Info</h3>
+        }else{
+            @foreach (var item in @Model.Lprof)
+            {
+                <h2>
+                    @item.Nombre @item.ApellidoP @item.ApellidoM
+                </h2>
+            }
+        }
+    }else{
+        @if( @Model.Lalum.Count==0 ){
+            <h2>NO HAY ESTUDIANTES ASIGNADOS PARA</h2>
+            <h3>@Model.Info</h3>
+        }else{
+            @foreach (var item in @Model.Lalum)
+            {
+                <h2>
+                    @item.Nombre @item.ApellidoP @item.ApellidoM
+                </h2>
+            }
+        }
+    }
 }
-

@@ -6,8 +6,8 @@
 <form class=" border border-primary col-md-4" method="GET" action="/relmodulos" >
     <br>
   <div class="form-group">
-    <label for="exampleFormControlSelect1">Consultar los estudiantes del modulo:</label>
-    <select class="form-control " id="exampleFormControlSelect1" name="id">
+    <label for="exaest">Consultar los estudiantes del modulo:</label>
+    <select class="form-control " id="idconest" name="id">
       @foreach (var item in @Model.Lmod)
       {
           <option>@item.Nombre</option>
@@ -15,6 +15,7 @@
     </select>
   </div>
   <button type="submit" class="btn btn-primary">Consultar</button>
+  <input for="exa0" style="visibility:hidden;" name="valalpr" value="0">
   <br>
   <br>
 </form>
