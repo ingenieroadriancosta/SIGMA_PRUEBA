@@ -76,7 +76,7 @@ namespace SIGMA_PRUEBA.Controllers
                 return View( lt );
             }
             if( valalpr.Contains("Alumnos") ){
-                lt.Lrela = db.RelacionesModulos.Where(s => s.CodigoModulo == ModP.Codigo && s.CodigoAdjunto<2 ).ToList();
+                lt.Lrela = db.RelacionesModulos.Where(s => s.CodigoModulo == ModP.Codigo && s.AprobadoProfesor<2 ).ToList();
             }else{
                 lt.valpr = 2;
                 lt.Lrela = db.RelacionesModulos.Where(s => s.CodigoModulo == ModP.Codigo && s.AprobadoProfesor==2 ).ToList();
@@ -87,19 +87,17 @@ namespace SIGMA_PRUEBA.Controllers
             }
             //
             if( lt.valpr==2 ){
-                ProfesoresParams ALP = null;
                 lt.Lprof = new List<ProfesoresParams>();
                 foreach( var values in lt.Lrela ){
-                    ALP = db.Profesores.Where( s => s.Codigo==values.CodigoAdjunto ).FirstOrDefault();
+                    ProfesoresParams ALP = db.Profesores.Where( s => s.Codigo==values.CodigoAdjunto ).FirstOrDefault();
                     if( ALP!=null ){
                         lt.Lprof.Add(ALP);
                     }
                 }
             }else{
-                AlumnosParams ALP = null;
                 lt.Lalum = new List<AlumnosParams>();
                 foreach( var values in lt.Lrela ){
-                    ALP = db.Alumnos.Where( s => s.Codigo==values.CodigoAdjunto ).FirstOrDefault();
+                    AlumnosParams ALP = db.Alumnos.Where( s => s.Codigo==values.CodigoAdjunto ).FirstOrDefault();
                     if( ALP!=null ){
                         lt.Lalum.Add(ALP);
                     }

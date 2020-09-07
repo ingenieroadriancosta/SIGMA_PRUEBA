@@ -76,7 +76,10 @@ namespace SIGMA_PRUEBA
             if( mdp==null ){
                 return false;
             }
-            return db.RelacionesModulos.Where( s=> s.CodigoModulo==mdp.Codigo ).FirstOrDefault()!=null;
+            return db.RelacionesModulos.Where( 
+                                s=> s.CodigoModulo==mdp.Codigo &&
+                                s.AprobadoProfesor==2
+                             ).FirstOrDefault()!=null;
         }
         //
         //
