@@ -156,7 +156,11 @@ namespace SIGMA_PRUEBA.Controllers
                                          )
         {
             AllParamsL lt = new AllParamsL();
-            lt.Info = idcodmod + idcard + lnamep + lnamem +
+            if( ManyProcs.IsProfesor(idcard,db) ){
+                lt.valpr = 1;
+                return View(lt);
+            }
+            lt.Info = idcodmod + idcard + name + lnamep + lnamem +
                         direcc + phone + dborn +
                         "";
             return View(lt);

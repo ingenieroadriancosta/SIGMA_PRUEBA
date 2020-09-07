@@ -1,6 +1,8 @@
 using System;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
+using SIGMA_PRUEBA.Models;
+
 namespace SIGMA_PRUEBA
 {
     public class ManyProcs
@@ -16,5 +18,12 @@ namespace SIGMA_PRUEBA
                 return -1;
             }
         }
+        //
+        //
+        public static bool IsProfesor( string idcard, DbContextSIGMA db ){
+            long id = str2long(idcard);
+            return db.Profesores.Where( s=> s.Codigo==id ).FirstOrDefault()!=null;
+        }
+        //
     }
 }
