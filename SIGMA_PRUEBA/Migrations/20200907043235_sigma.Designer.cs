@@ -9,7 +9,7 @@ using SIGMA_PRUEBA.Models;
 namespace SIGMA_PRUEBA.Migrations
 {
     [DbContext(typeof(DbContextSIGMA))]
-    [Migration("20200907014026_sigma")]
+    [Migration("20200907043235_sigma")]
     partial class sigma
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,7 +20,7 @@ namespace SIGMA_PRUEBA.Migrations
 
             modelBuilder.Entity("SIGMA_PRUEBA.Models.AlumnosParams", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -30,7 +30,7 @@ namespace SIGMA_PRUEBA.Migrations
                     b.Property<string>("ApellidoP")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Codigo")
+                    b.Property<long>("Codigo")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("Nacimiento")
@@ -46,11 +46,11 @@ namespace SIGMA_PRUEBA.Migrations
 
             modelBuilder.Entity("SIGMA_PRUEBA.Models.ModulosParams", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Codigo")
+                    b.Property<long>("Codigo")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Nombre")
@@ -63,7 +63,7 @@ namespace SIGMA_PRUEBA.Migrations
 
             modelBuilder.Entity("SIGMA_PRUEBA.Models.ProfesoresParams", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -73,8 +73,8 @@ namespace SIGMA_PRUEBA.Migrations
                     b.Property<string>("ApellidoP")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Codigo")
-                        .HasColumnType("TEXT");
+                    b.Property<long>("Codigo")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Direccion")
                         .HasColumnType("TEXT");
@@ -95,17 +95,17 @@ namespace SIGMA_PRUEBA.Migrations
 
             modelBuilder.Entity("SIGMA_PRUEBA.Models.RelacionesModulosParams", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("AprobadoProfesor")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("CodigoAdjunto")
+                    b.Property<long>("CodigoAdjunto")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("CodigoModulo")
+                    b.Property<long>("CodigoModulo")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("CreatedDate")

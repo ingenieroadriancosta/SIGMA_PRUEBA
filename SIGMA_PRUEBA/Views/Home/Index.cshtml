@@ -33,18 +33,25 @@
 &nbsp;
 &nbsp;
 &nbsp;
-<form class=" border border-primary col-md-3" method="POST" action="/ingmodulos">
+<form class=" border border-primary col-md-3"
+    data-toggle="validator"
+    role="form"
+     method="POST" action="/ingmodulos">
   <br>
   <div class="form-group">
+
+    
+
     <label for="exaest">INGRESO DE MODULOS:</label>
     <label for="static">Código del módulo:</label>
-    <input type="text" class="form-control" name="idofmod" id="idofmod" placeholder="Código del módulo" 
+    <input required type="text" class="form-control" name="idofmod" id="idofmod" placeholder="Código del módulo" 
           oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                maxlength="18"
               value="901289">
     <br>
     <br>
     <label for="static">Nombre del módulo:</label>
-    <input type="text" class="form-control" name="nameofmod" id="nameofmod" placeholder="Nombre del módulo" 
+    <input required type="text" class="form-control" name="nameofmod" id="nameofmod" placeholder="Nombre del módulo" 
           onkeydown="return /[a-z]/i.test(event.key)"
               value="CalculoI">
   </div>

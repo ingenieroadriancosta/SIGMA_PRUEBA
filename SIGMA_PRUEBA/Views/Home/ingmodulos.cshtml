@@ -1,14 +1,27 @@
 @model SIGMA_PRUEBA.Models.AllParamsL;
 
 
-@if( @Model.valpr==0 ){
-    <script>
-        alert("Error:\n @Model.Info" );
-        location.replace("/");
-    </script>
-}else{
-    <script>
-        alert("Correcto:\n @Model.Info"  );
-        location.replace("/");
-    </script>
+@switch (@Model.valpr)
+{
+    case 0:
+        <script>
+            alert("El modulo \n\n    @Model.Info \n\nha sido guardado."  );
+            location.replace("/");
+        </script>
+        break;
+    case 1:
+        <script>
+            alert("Error:\nHay espacios en blanco."  );
+            location.replace("/");
+        </script>
+        break;
+    case 2:
+        <script>
+            alert("Error:\nEl módulo @Model.Info ya existe."  );
+            location.replace("/");
+        </script>
+        break;
+    default:
+        break;
 }
+

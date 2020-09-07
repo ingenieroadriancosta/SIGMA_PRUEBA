@@ -11,9 +11,9 @@ namespace SIGMA_PRUEBA.Migrations
                 name: "Alumnos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    Id = table.Column<long>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Codigo = table.Column<int>(nullable: false),
+                    Codigo = table.Column<long>(nullable: false),
                     Nombre = table.Column<string>(nullable: true),
                     ApellidoP = table.Column<string>(nullable: true),
                     ApellidoM = table.Column<string>(nullable: true),
@@ -28,9 +28,9 @@ namespace SIGMA_PRUEBA.Migrations
                 name: "Modulos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    Id = table.Column<long>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Codigo = table.Column<int>(nullable: false),
+                    Codigo = table.Column<long>(nullable: false),
                     Nombre = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -42,9 +42,9 @@ namespace SIGMA_PRUEBA.Migrations
                 name: "Profesores",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    Id = table.Column<long>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Codigo = table.Column<string>(nullable: true),
+                    Codigo = table.Column<long>(nullable: false),
                     Nombre = table.Column<string>(nullable: true),
                     ApellidoP = table.Column<string>(nullable: true),
                     ApellidoM = table.Column<string>(nullable: true),
@@ -61,10 +61,10 @@ namespace SIGMA_PRUEBA.Migrations
                 name: "RelacionesModulos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    Id = table.Column<long>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    CodigoModulo = table.Column<int>(nullable: false),
-                    CodigoAdjunto = table.Column<int>(nullable: false),
+                    CodigoModulo = table.Column<long>(nullable: false),
+                    CodigoAdjunto = table.Column<long>(nullable: false),
                     AprobadoProfesor = table.Column<int>(nullable: false),
                     CreatedDate = table.Column<DateTime>(nullable: false),
                     ModifiedDate = table.Column<DateTime>(nullable: false)

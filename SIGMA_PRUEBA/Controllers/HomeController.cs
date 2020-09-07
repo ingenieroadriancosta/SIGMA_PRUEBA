@@ -120,7 +120,8 @@ namespace SIGMA_PRUEBA.Controllers
             AllParamsL lt = new AllParamsL();
             lt.valpr = 0;
             if( idofmod==null || nameofmod==null ){
-                lt.Info = "No debe dejar campos vacios.";
+                lt.valpr = 1;
+                lt.Info = nameofmod;
                 return View(lt);
             }
             long Iidofmod = (long)ManyProcs.str2long(idofmod);
@@ -130,11 +131,17 @@ namespace SIGMA_PRUEBA.Controllers
                     s.Codigo==Iidofmod
              ).FirstOrDefault();
             if( ModP!=null ){
-                lt.Info = "EL módulo ya existe";
+                lt.valpr = 2;
+                lt.Info = nameofmod;
                 return View(lt);
             }
-            lt.valpr = 1;
-            lt.Info = "El módulo " + nameofmod + " ha sido guardado.";
+            ModP = new ModulosParams();
+            ModP.Codigo = Iidofmod;
+            ModP.Nombre = nameofmod;
+            db.Modulos.Add(ModP);
+            db.SaveChanges();
+            lt.valpr = 0;
+            lt.Info = nameofmod;
             return View(lt);
         }
         //
