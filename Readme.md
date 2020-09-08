@@ -1,7 +1,3 @@
-<a href="https://youtu.be/IEyMEZzx7SQ">
-<h1>PRESIONA PARA VER VIDEO</h1>
+<h1>PRESIONAR EN LA IMAGEN PARA VER VIDEO</h1>
 
-</a>
-<img src="01.png" >
-
-
+[![Watch the video](01.png)](https://youtu.be/IEyMEZzx7SQ)
