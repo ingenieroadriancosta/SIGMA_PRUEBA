@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wJUswvILKnha6S356soelJg7O+ZmpX7Hr7GhfRKlDMlEVelQ3w9+5zUuy35J1r5LzdIum3BCkQ7f7sm1UUMrIA==",
+  "dgSpecHash": "2PwnNGxs3l8x5C3oDRz4RdE+gzEW2+i1C6zaI0v10rhufTVvbKzV7mQrpzAu3UzTq0ggPZb1evXU8JVYuJH7OA==",
   "success": true,
-  "projectFilePath": "E:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\SIGMA_PRUEBA.csproj",
+  "projectFilePath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\SIGMA_PRUEBA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADRIAN COSTA\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\2.2.0\\microsoft.aspnetcore.cryptography.internal.2.2.0.nupkg.sha512",
     "C:\\Users\\ADRIAN COSTA\\.nuget\\packages\\microsoft.aspnetcore.dataprotection\\2.2.0\\microsoft.aspnetcore.dataprotection.2.2.0.nupkg.sha512",

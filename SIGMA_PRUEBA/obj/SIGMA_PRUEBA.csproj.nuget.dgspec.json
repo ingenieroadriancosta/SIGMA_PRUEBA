@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\SIGMA_PRUEBA.csproj": {}
+    "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\SIGMA_PRUEBA.csproj": {}
   },
   "projects": {
-    "E:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\SIGMA_PRUEBA.csproj": {
+    "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\SIGMA_PRUEBA.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\SIGMA_PRUEBA.csproj",
+        "projectUniqueName": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\SIGMA_PRUEBA.csproj",
         "projectName": "SIGMA_PRUEBA",
-        "projectPath": "E:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\SIGMA_PRUEBA.csproj",
+        "projectPath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\SIGMA_PRUEBA.csproj",
         "packagesPath": "C:\\Users\\ADRIAN COSTA\\.nuget\\packages\\",
-        "outputPath": "E:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\obj\\",
+        "outputPath": "e:\\AIIF\\SegAll\\ENTERPRISE\\WEB\\BACK\\NET\\EJERCICIOS\\SIGMA\\SIGMA_PRUEBA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADRIAN COSTA\\AppData\\Roaming\\NuGet\\NuGet.Config",
